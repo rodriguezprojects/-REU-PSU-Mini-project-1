@@ -17,7 +17,7 @@ def initialize(pb0, pn0, pbn0, pnb0):
     pnresult = [pn]
 
 def observe():
-    global pb, pn, pbresult, pnresultg
+    global pb, pn, pbresult, pnresult
     pbresult.append(pb)
     pnresult.append(pn)
 
@@ -33,12 +33,18 @@ def update():
 
     pn = pnnext
 
+initialize(0.49, 0.51, 0.95, 0.04)
 for pbn0 in arange(0, 1, 0.05):
     for pnb0 in arange(0, 1, 0.05):
-        initialize(0.3, 0.7, pnb0, pnb0)
-        for t in range(50):
+        initialize(0.49, 0.51, pbn0, pnb0)
+        for t in range(30):
             update()
             observe()
-            plot(pbresult, pnresult, 'b')
+            plot(pnresult, pbresult)
+
+plt.plot(pnresult, 'b', label = 'Pn')
+plt.plot(pbresult, 'r', label = 'Pb')
+plt.title("Pb = 0.49 vs Pn = 0.51 with Pbn = 0.95 and Pnb = 0.04")
+plt.legend()
 
 show()
