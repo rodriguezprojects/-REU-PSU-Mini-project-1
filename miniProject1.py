@@ -36,9 +36,9 @@ def update():
 for pbn0 in arange(0, 1, 0.05):
     for pnb0 in arange(0, 1, 0.05):
         initialize(0.3, 0.7, pnb0, pnb0)
-            for t in range(30):
-                update()
-                observe()
-                plot(pbresult, pnresult, 'b')
+        for t in range(50):
+            update()
+            observe()
+            plot(pbresult, pnresult, 'b')
 
 show()
