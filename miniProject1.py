@@ -22,6 +22,10 @@ def update():
 
     global pb, pn, pbresult, pnresultg, pnb, pbn
 
+    pbnext = 
+
+    pnnext =
+
 
 
 for x0 in arange(0, 1, 0.5):
